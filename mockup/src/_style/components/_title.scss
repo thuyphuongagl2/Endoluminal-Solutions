@@ -3,3 +3,53 @@
 /*------------------------------------------------------------
     Title
 ------------------------------------------------------------*/
+.title01 {
+  .en {
+    color: $white;
+    font-size: 7.5rem;
+    line-height: 1;
+    font-weight: 400;
+    font-family: $en-fonts;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .jp {
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: calc(24.5 / 14);
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background: $white;
+      width: 30px;
+      height: 1px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.title02 {
+  color: transparent;
+  background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #275317, #282727);
+  font-size: 12.357rem;
+  line-height: calc(88 / 123.57);
+  font-weight: 400;
+  font-family: $en-fonts;
+  text-indent: -70px;
+  padding-left: 70px;
+  margin-right: -350px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0.35em;
+}
