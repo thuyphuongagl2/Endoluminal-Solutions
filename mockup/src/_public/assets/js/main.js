@@ -129,37 +129,55 @@ $(document).ready(function () {
   $('.footer, .header').find('*').each(function () {
     $(this).html($(this).html().replace(/&nbsp;/g, ''));
   });
-  /* ======================================
-  table width 
-  ====================================== */
-  const table = $('.table02');
-  function adjustTableColumns() {
-    const rows = table.find('tr');
-    const columnWidths = [];
-    rows.each(function() {
-      const cells = $(this).find('th, td');
-      cells.each(function(index) {
-        const contentWidth = $(this)[0].scrollWidth;
-        columnWidths[index] = Math.max(columnWidths[index] || 0, contentWidth);
-      });
-    });
 
-    rows.each(function() {
-      const cells = $(this).find('th, td');
-      cells.each(function(index) {
-        $(this).css('max-width', `${columnWidths[index]}px`);
-      });
-    });
-  }
-  adjustTableColumns();
-  $(window).on('resize', adjustTableColumns);
   /* ======================================
   banner sticky
   ====================================== */
   $('.banner__sticky .close').click(function () {
 		$(this).parent().fadeOut();
 	});
+
+  gsap.registerPlugin(ScrollTrigger);
+window.addEventListener("load", () => {
+gsap.timeline({
+      scrollTrigger: {
+        trigger: ".mv__space",
+        start: "top bottom",
+        end: "bottom bottom",
+        invalidateOnRefresh: true,
+        scrub: 1
+      }
+    })
+      .to(".mv__img", {
+        duration: 2,
+        width: "100%",
+        height: "100%",
+        borderRadius: "0"
+      }, "vis1")
+      .to(".mv__img-item", {
+        duration: 2,
+        scale: 1
+      }, "vis1")
+      .to(".mv__img-cover", {
+        duration: 1,
+        autoAlpha: 1
+      }, "vis2")
+      .to(".mv__slidetxt", {
+        duration: 1,
+        clipPath: "polygon(0 -50%, 100% -50%, 100% 0%, 0 0%)",
+        y: "50%"
+      }, "vis2")
+      .to(".newsbox", {
+        duration: 1,
+
+        bottom: 0,
+        top: 0,
+        // position: relative,
+      }, "vis2");
+})
 });
+
+
 
 $(function () {
   $('a[href*=\\#]:not([href=\\#])').click(function () {

@@ -6,6 +6,7 @@
 ------------------------------------------------------------*/
 .btn01 {
     width: 122px;
+
   .btn01__txt {
     width: 100%;
     background-color: transparent;
@@ -25,8 +26,39 @@
     line-height: calc(13 / 12);
     z-index: 1;
     border: 1px solid $white;
+
     &::before {
       @include icon(auto, $white);
+      left: 14px;
+    }
+  }
+}
+
+.btn02 {
+    width: 122px;
+
+  .btn02__txt {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 19px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 6px 5px 21px;
+    transition: all 0.3s ease-in-out;
+    color: $primary !important;
+    text-decoration: none !important;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    font-feature-settings: "palt";
+    z-index: 1;
+    border: 1px solid $primary;
+
+    &::before {
+      @include icon(auto, $primary);
       left: 14px;
     }
   }

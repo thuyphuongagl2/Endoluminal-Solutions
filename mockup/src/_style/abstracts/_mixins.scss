@@ -58,3 +58,21 @@
   background-color: #b4b4b4;
   mix-blend-mode: multiply;
 }
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scrollText2 {
+0% {
+    transform: translateX(0);
+}
+
+100% {
+    transform: translateX(-100%);
+}
+}

@@ -5,7 +5,62 @@
 ------------------------------------------------------------*/
 
 .footer {
-  padding: 60px 30px;
+  padding: 101px 0 47px;
+  background: url(/assets/img/top/footer_bg.jpg) no-repeat center / cover;
+
+  //.footer__logo .
+  &__logo {
+    max-width: 368px;
+    padding-bottom: 41px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid $white;
+  }
+
+  //.footer__nav .
+  &__nav {
+    max-width: 368px;
+  }
+
+  //.footer__menu .
+  &__menu {
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 150px;
+    gap: 0 44px;
+
+    li {
+      a {
+        color: $white;
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        line-height: calc(34 / 16);
+        padding-left: 10px;
+        position: relative;
+        font-feature-settings: "palt";
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 11px;
+          width: 3px;
+          height: 3px;
+          background-color: $white;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  //.footer__copyright .
+  &__copyright {
+    color: $white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-family: $en-fonts;
+    margin-top: 148px;
+  }
 }
 
 .js-totop {
@@ -59,7 +114,8 @@
     width: 22px;
     height: 22px;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: '';
       display: block;
       box-sizing: border-box;
@@ -83,5 +139,4 @@
       background: currentColor;
     }
   }
-
 }
