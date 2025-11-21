@@ -7,7 +7,7 @@ $(document).ready(function () {
   /* ======================================
   menu
   ====================================== */
-  $(document).on('click', '.js-menu', function() {
+  $(document).on('click', '.js-menu', function () {
     $(this).toggleClass('active')
     $(".header__content").toggleClass("is-active");
     $('body').toggleClass('lock');
@@ -90,7 +90,7 @@ $(document).ready(function () {
   /* ======================================
   tabs
   ====================================== */
-   $('.js-tab').on('click', '.tab__txt', function (e) {
+  $('.js-tab').on('click', '.tab__txt', function (e) {
     e.preventDefault();
     var tabId = $(this).attr('data-tab');
     $(this).closest('.js-tab').find('.tab__txt').removeClass('is-active');
@@ -112,7 +112,9 @@ $(document).ready(function () {
    Scroll to top
    ====================================== */
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
+    var isTop = $('body').hasClass('home_page');
+    var threshold = isTop ? 2000 : 300;
+    if ($(this).scrollTop() > threshold) {
       $('.js-totop').addClass('is-active');
     } else {
       $('.js-totop').removeClass('is-active');
@@ -134,12 +136,16 @@ $(document).ready(function () {
   banner sticky
   ====================================== */
   $('.banner__sticky .close').click(function () {
-		$(this).parent().fadeOut();
-	});
-
+    $(this).parent().fadeOut();
+  });
+  /* ======================================
+  mv scroll
+  ====================================== */
   gsap.registerPlugin(ScrollTrigger);
-window.addEventListener("load", () => {
-gsap.timeline({
+  gsap.registerPlugin(CSSRulePlugin);
+  var rule = CSSRulePlugin.getRule(".mv__imgwwrap::after");
+  window.addEventListener("load", () => {
+    gsap.timeline({
       scrollTrigger: {
         trigger: ".mv__space",
         start: "top bottom",
@@ -148,6 +154,14 @@ gsap.timeline({
         scrub: 1
       }
     })
+      .to(rule, {
+        duration: 2,
+        width: "100%",
+        height: "100%",
+        cssRule: {
+          content: "none"
+        }
+      }, "vis1")
       .to(".mv__img", {
         duration: 2,
         width: "100%",
@@ -169,12 +183,11 @@ gsap.timeline({
       }, "vis2")
       .to(".newsbox", {
         duration: 1,
-
-        bottom: 0,
-        top: 0,
+        bottom: "auto",
+        // top: 0,
         // position: relative,
       }, "vis2");
-})
+  })
 });
 
 
