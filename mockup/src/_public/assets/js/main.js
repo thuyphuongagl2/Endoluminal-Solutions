@@ -9,18 +9,8 @@ $(document).ready(function () {
   ====================================== */
   $(document).on('click', '.js-menu', function () {
     $(this).toggleClass('active')
-    $(".header__content").toggleClass("is-active");
+    $(".header, .header__content").toggleClass("is-active");
     $('body').toggleClass('lock');
-    $('.js-scroll-to-top').toggleClass('is-active');
-    if ($(this).hasClass('active')) {
-      $('.header').addClass('is-fixed');
-    } else {
-      if ($(window).scrollTop() > 200 || $('.header').hasClass('header__under')) {
-        $('.header').addClass('is-fixed');
-      } else {
-        $('.header').removeClass('is-fixed');
-      }
-    }
   })
   /* ======================================
   mv height
@@ -70,23 +60,7 @@ $(document).ready(function () {
       $(this).closest('li').find('.subInner').slideToggle();
     }
   });
-  /* ======================================
-  header fixed
-  ====================================== */
-  if (!$('.js-menu').hasClass('active')) {
-    if ($('.header').hasClass('header__under')) {
-      $('.header').addClass('is-fixed');
-    } else {
-      if ($(window).scrollTop() > 200) {
-        $('.header').addClass('is-fixed');
-      } else {
-        $('.header').removeClass('is-fixed');
-      }
-    }
-  }
-  $(window).on('scroll load', function () {
-    $('.header').length && $(window).scrollTop() > 0 ? $('.header').addClass('is-fixed') : $('.header').removeClass('is-fixed');
-  })
+
   /* ======================================
   tabs
   ====================================== */

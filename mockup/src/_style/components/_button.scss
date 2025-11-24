@@ -30,6 +30,7 @@
       &:hover {
         opacity: 1;
         color: $black !important;
+
         &::before {
           left: 0;
           width: 100%;
@@ -75,6 +76,7 @@
       &:hover {
         opacity: 1;
         color: $white !important;
+
         &::before {
           left: 0;
           width: 100%;
@@ -85,6 +87,7 @@
         }
       }
     }
+
     &::before {
       @include icon(auto, $primary);
       left: 14px;

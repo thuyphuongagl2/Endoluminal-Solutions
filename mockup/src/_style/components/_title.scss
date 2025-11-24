@@ -6,7 +6,7 @@
 .title01 {
   .en {
     color: $white;
-    font-size: 7.5rem;
+    font-size: clamp(5rem, 4.883vw + 1.25rem, 7.5rem);
     line-height: 1;
     font-weight: 400;
     font-family: $en-fonts;
@@ -42,7 +42,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #275317, #282727);
-  font-size: 12.357rem;
+  font-size: clamp(9rem, 6.445vw + 4.05rem, 12.3rem);
   line-height: calc(88 / 123.57);
   font-weight: 400;
   font-family: $en-fonts;
@@ -56,7 +56,7 @@
 
 .title03 {
   .en {
-    font-size: 5rem;
+    font-size: clamp(3rem, 3.906vw + 0rem, 5rem);
     font-weight: 400;
     font-family: $en-fonts;
     line-height: calc(78.75 / 50);

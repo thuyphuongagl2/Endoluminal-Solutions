@@ -23,6 +23,7 @@
           transition: transform 10s cubic-bezier(0, 0.1, 0.05, 0.99),
             -webkit-transform 10s cubic-bezier(0, 0.1, 0.05, 0.99);
         }
+
         .btn01 {
           .btn01__txt {
             background-color: $white;
@@ -83,7 +84,7 @@
 
   //.list01__ttl .
   &__ttl {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 0.781vw + 1.2rem, 2.2rem);
     font-weight: 500;
     line-height: calc(35.81 / 22);
     letter-spacing: 0.1em;

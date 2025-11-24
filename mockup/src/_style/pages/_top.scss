@@ -238,7 +238,7 @@
 
   //.concept__ttl .
   &__ttl {
-    font-size: 3rem;
+    font-size: clamp(2rem, 1.953vw + 0.5rem, 3rem);
     font-weight: 500;
     letter-spacing: 0.1em;
     font-feature-settings: 'palt';
@@ -271,6 +271,12 @@
     width: 996px;
     height: 728px;
     z-index: -1;
+    @include lg {
+      width: 800px;
+    }
+    @include tab {
+      width: 500px;
+    }
   }
 
   //.imgtxt__inner .
@@ -295,6 +301,9 @@
   //.imgtxt__content .
   &__content {
     padding: 62px 85px 0 0;
+    @include lg {
+      padding: 60px 50px 0 0;
+    }
   }
 
   //.imgtxt__ttl .
@@ -325,7 +334,7 @@
     }
 
     .jp {
-      font-size: 3rem;
+      font-size: clamp(2rem, 1.953vw + 0.5rem, 3rem);
       line-height: calc(52.5 / 30);
       display: block;
     }
@@ -518,7 +527,7 @@
     }
 
     .jp {
-      font-size: 3rem;
+      font-size: clamp(2rem, 1.953vw + 0.5rem, 3rem);
       line-height: calc(52.5 / 30);
       display: block;
       letter-spacing: 0.1em;
@@ -581,7 +590,7 @@
 
     p {
       margin-right: 60px;
-      font-size: 21.39rem;
+      font-size: clamp(14rem, 14.258vw + 3.05rem, 21.3rem);
       line-height: calc(152.33 / 213.9);
       font-weight: 400;
       font-family: $en-fonts;
@@ -615,6 +624,9 @@
       width: 100%;
       margin-right: min(((51 / 768) * 100vw), 84px);
       margin-top: 13px;
+      @include lg {
+        max-width: 450px;
+      }
     }
 
     &__detail {
