@@ -23,6 +23,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  &.is-active {
+    .header__inner {
+      background-color: $white;
+    }
+  }
 
   //.header__inner .
   &__inner {
@@ -36,8 +41,9 @@ body {
     top: 0;
     left: 0;
     z-index: 9000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease-in-out;
     // background: $white;
+    pointer-events: none;
     @include lg {
       padding: 0 2%;
     }
@@ -50,6 +56,9 @@ body {
   &__logoLink {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2;
+    pointer-events: all;
   }
 
   //.header__logoimg .
@@ -62,61 +71,53 @@ body {
 
   //.header__content .
   &__content {
+    position: absolute;
     width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 1;
-      opacity: 0;
+    left: 0;
+    top: 100px;
+    background-color: $white;
+    padding: 22px 0 31px;
+    transform: translateY(-70px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    min-width: 1280px;
+    @include tab {
+      min-width: 100%;
       top: var(--header-height);
-      height: 50%;
-      position: fixed;
-      left: 0;
-      background-color: $white;
-      visibility: hidden;
-      pointer-events: none;
-      overflow-x: visible;
-      overflow-y: auto;
+    }
+    @include sp {
       padding: 22px 22px 100px;
-      display: block;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      @include tab {
-        height: calc(100vh - var(--header-height));
-      }
-    
+      height: calc(100vh - var(--header-height));
+    }
 
     &.is-active {
+      transform: translateY(0);
+      opacity: 1;
+          pointer-events: all;
+
+      @include sp {
         opacity: 1;
         visibility: visible;
         pointer-events: all;
         transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      
+      }
     }
   }
 
-  //.header__nav .
-  &__nav {
-    padding-right: 16px;
-    // flex: 1;
-    @include lg {
-      padding-right: 5px;
-    }
-    @include tab {
-      padding-right: 0;
-    }
-  }
 }
 
 .menu {
   display: flex;
+  justify-content: center;
   color: $white;
-  @include tab {
+  @include sp {
     display: block;
   }
 
   //.menu__item .
   &__item {
     position: relative;
-    @include tab {
+    @include sp {
       border-bottom: 1px solid #e8e8e8;
       padding-bottom: 15px;
       margin-bottom: 15px;
@@ -124,54 +125,28 @@ body {
 
     &:not(:last-of-type) {
       margin-right: 14px;
-      @include tab {
+      @include sp {
         margin-right: 0;
       }
     }
   }
 
   //.menu__link .
-  &__link {
+  &__link,
+  &__title {
     position: relative;
     font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.1em;
-    line-height: 1.85;
-    text-transform: uppercase;
-    padding-bottom: 3px;
     display: block;
-    color: #000;
+    color: $black;
 
     @include tab {
+      font-size: 1.3rem;
+    }
+    @include sp {
       font-size: 1.5rem;
       padding-left: 10px;
-    }
-    @include desktop {
-      &::before {
-        content: '';
-        display: inline-block;
-        height: 1px;
-        width: 0%;
-        transition: width 0.12s ease-in;
-        background-color: $white;
-        position: absolute;
-        left: auto;
-        right: 0;
-        bottom: 0;
-      }
-
-      &:hover {
-        opacity: 1;
-
-        &::before {
-          width: 100%;
-          left: 0;
-          right: auto;
-          @include lg {
-            width: 0%;
-          }
-        }
-      }
     }
   }
 
@@ -179,7 +154,6 @@ body {
   &__title {
     position: relative;
     transition: 0.3s ease;
-    color: #000;
 
     @include lg {
       padding-bottom: 0;
@@ -490,6 +464,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 33px;
+  pointer-events: all;
 
   &.active {
     .hamburger-line {
@@ -510,6 +485,12 @@ body {
         transform: rotate(-45deg);
       }
     }
+    .hamburger-txt {
+      &::before {
+        content: "Close";
+      }
+    }
+    
   }
 }
 
@@ -557,7 +538,6 @@ body {
     position: relative;
     width: 100%;
     text-align: center;
-
   }
 }
 

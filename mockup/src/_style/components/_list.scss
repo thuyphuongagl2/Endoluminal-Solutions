@@ -42,6 +42,9 @@
     overflow: hidden;
     transition: transform 10s cubic-bezier(0.03, 0.71, 0.12, 0.96),
       -webkit-transform 10s cubic-bezier(0.03, 0.71, 0.12, 0.96);
+      @include tab {
+        height: 300px;
+      }
 
     &::after {
       @include bg();
@@ -80,6 +83,9 @@
     font-size: 1.2rem;
     font-weight: 400;
     line-height: calc(13.55 / 12);
+    @include tab {
+      font-size: 1rem;
+    }
   }
 
   //.list01__ttl .

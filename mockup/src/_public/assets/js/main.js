@@ -10,7 +10,13 @@ $(document).ready(function () {
   $(document).on('click', '.js-menu', function () {
     $(this).toggleClass('active')
     $(".header, .header__content").toggleClass("is-active");
-    $('body').toggleClass('lock');
+    if ($(window).width() < 768) {
+      if ($(this).hasClass('active'))
+        $('body').addClass('lock');
+    }
+    else {
+      $('body').removeClass('lock');
+    }
   })
   /* ======================================
   mv height
