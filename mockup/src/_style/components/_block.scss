@@ -6,6 +6,9 @@
 .block01 {
   display: flex;
   align-items: flex-start;
+  @include sp {
+    display: block;
+  }
 
   //.block01__left .
   &__left {
@@ -28,6 +31,9 @@
       .content {
         display: flex;
         align-items: flex-start;
+        @include sp {
+          display: block;
+        }
 
         dt {
           width: 166px;

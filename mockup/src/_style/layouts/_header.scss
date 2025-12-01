@@ -23,6 +23,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+
   &.is-active {
     .header__inner {
       background-color: $white;
@@ -485,6 +486,7 @@ body {
         transform: rotate(-45deg);
       }
     }
+
     .hamburger-txt {
       &::before {
         content: "Close";

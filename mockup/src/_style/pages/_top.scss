@@ -103,6 +103,9 @@
     color: $gray-200;
     transform: translate(-50%, -50%);
     will-change: clip-path;
+    @include sp {
+      font-size: 12.4rem;
+    }
 
     .txt {
       flex-shrink: 0;
@@ -156,6 +159,12 @@
   right: 50px;
   bottom: 38px;
   max-width: 376px;
+  @include sp {
+    right: auto;
+    left: 0;
+    max-width: 100%;
+    padding: 0 20px;
+  }
 
   //.newsbox__head .
   &__head {
@@ -236,6 +245,9 @@
   &__inner {
     display: flex;
     align-items: center;
+    @include sp {
+      display: block;
+    }
   }
 
   .title01 {
@@ -442,9 +454,7 @@
     background: $white;
     padding: 14px 9px 11px 35px;
     @include sp {
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -45px;
+      width: 262px;
     }
 
     .note {
@@ -497,6 +507,9 @@
   &__inner {
     display: flex;
     align-items: flex-end;
+    @include sp {
+      display: block;
+    }
   }
 
   //.message__img .

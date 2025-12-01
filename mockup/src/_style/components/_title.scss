@@ -52,6 +52,10 @@
   position: relative;
   z-index: 1;
   padding-bottom: 0.35em;
+  @include sp {
+    font-size: 4.6rem;
+    margin-right: 0;
+  }
 }
 
 .title03 {

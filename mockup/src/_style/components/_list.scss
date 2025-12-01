@@ -10,6 +10,9 @@
   padding-top: 70px;
   border-top: 1px solid $primary;
   gap: 3px;
+  @include sp {
+    flex-direction: column;
+  }
 
   //.list01__item .
   &__item {
@@ -33,6 +36,9 @@
         }
       }
     }
+    @include sp {
+      width: 100%;
+    }
   }
 
   //.list01__img .
@@ -44,6 +50,9 @@
       -webkit-transform 10s cubic-bezier(0.03, 0.71, 0.12, 0.96);
       @include tab {
         height: 300px;
+      }
+      @include sp {
+        height: 150px;
       }
 
     &::after {
@@ -86,6 +95,10 @@
     @include tab {
       font-size: 1rem;
     }
+    @include sp {
+      writing-mode: horizontal-tb;
+
+    }
   }
 
   //.list01__ttl .
@@ -95,6 +108,9 @@
     line-height: calc(35.81 / 22);
     letter-spacing: 0.1em;
     margin-bottom: 16px;
+    @include sp {
+      font-size: 2rem;
+    }
   }
 }
 

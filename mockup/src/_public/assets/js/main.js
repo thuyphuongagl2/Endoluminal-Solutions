@@ -11,11 +11,12 @@ $(document).ready(function () {
     $(this).toggleClass('active')
     $(".header, .header__content").toggleClass("is-active");
     if ($(window).width() < 768) {
-      if ($(this).hasClass('active'))
+      if ($(this).hasClass('active')) {
         $('body').addClass('lock');
-    }
-    else {
-      $('body').removeClass('lock');
+      }
+      else {
+        $('body').removeClass('lock');
+      }
     }
   })
   /* ======================================
@@ -121,53 +122,53 @@ $(document).ready(function () {
   /* ======================================
   mv scroll
   ====================================== */
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(CSSRulePlugin);
-  var rule = CSSRulePlugin.getRule(".mv__imgwwrap::after");
-  window.addEventListener("load", () => {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".mv__space",
-        start: "top bottom",
-        end: "bottom bottom",
-        invalidateOnRefresh: true,
-        scrub: 1
-      }
-    })
-      .to(rule, {
-        duration: 2,
-        width: "100%",
-        height: "100%",
-        cssRule: {
-          content: "none"
-        }
-      }, "vis1")
-      .to(".mv__img", {
-        duration: 2,
-        width: "100%",
-        height: "100%",
-        borderRadius: "0"
-      }, "vis1")
-      .to(".mv__img-item", {
-        duration: 2,
-        scale: 1
-      }, "vis1")
-      .to(".mv__img-cover", {
-        duration: 1,
-        autoAlpha: 1
-      }, "vis2")
-      .to(".mv__slidetxt", {
-        duration: 1,
-        clipPath: "polygon(0 -50%, 100% -50%, 100% 0%, 0 0%)",
-        y: "50%"
-      }, "vis2")
-      .to(".newsbox", {
-        duration: 1,
-        bottom: "auto",
-        // top: 0,
-        // position: relative,
-      }, "vis2");
-  })
+  // gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(CSSRulePlugin);
+  // var rule = CSSRulePlugin.getRule(".mv__imgwwrap::after");
+  // window.addEventListener("load", () => {
+  //   gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".mv__space",
+  //       start: "top bottom",
+  //       end: "bottom bottom",
+  //       invalidateOnRefresh: true,
+  //       scrub: 1
+  //     }
+  //   })
+  //     .to(rule, {
+  //       duration: 2,
+  //       width: "100%",
+  //       height: "100%",
+  //       cssRule: {
+  //         content: "none"
+  //       }
+  //     }, "vis1")
+  //     .to(".mv__img", {
+  //       duration: 2,
+  //       width: "100%",
+  //       height: "100%",
+  //       borderRadius: "0"
+  //     }, "vis1")
+  //     .to(".mv__img-item", {
+  //       duration: 2,
+  //       scale: 1
+  //     }, "vis1")
+  //     .to(".mv__img-cover", {
+  //       duration: 1,
+  //       autoAlpha: 1
+  //     }, "vis2")
+  //     .to(".mv__slidetxt", {
+  //       duration: 1,
+  //       clipPath: "polygon(0 -50%, 100% -50%, 100% 0%, 0 0%)",
+  //       y: "50%"
+  //     }, "vis2")
+  //     .to(".newsbox", {
+  //       duration: 1,
+  //       bottom: "auto",
+  //       // top: 0,
+  //       // position: relative,
+  //     }, "vis2");
+  // })
 });
 
 
