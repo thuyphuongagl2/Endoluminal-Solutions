@@ -89,53 +89,28 @@
 
 .ovs {
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.table03 {
+.table02 {
   overflow: hidden;
-  // border: 1px solid $gray-300;
+  border: 1px solid $gray-800;
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 30px;
-
-  thead {
-    tr {
-      td,
-      th {
-        // border: 1px solid $gray-300;
-        padding: 20px 10px;
-        text-align: center;
-        font-size: 1.6rem;
-        font-weight: 700;
-        letter-spacing: 0;
-        line-height: 1.4;
-        // background-color: $blue-200;
-        color: $primary;
-        @include sp {
-          padding: 15px 5px;
-          font-size: 1.3rem;
-        }
-      }
-
-      td {
-        color: #808080;
-        background-color: $white;
-      }
-    }
-  }
+  margin-bottom: 15px;
 
   tbody {
     td,
     th {
-      // border: 1px solid $gray-300;
+      border: 1px solid $gray-800;
       padding: 20px 10px;
       font-size: 1.6rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 0;
       line-height: 1.4;
       color: $primary;
       @include sp {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         letter-spacing: 0;
         padding: 15px 5px;
       }
@@ -147,35 +122,74 @@
 
     th {
       text-align: center;
-      width: 300px;
-      // background-color: $blue-200;
+      // width: 300px;
+      min-width: 83px;
+      background-color: $gray-200;
+      width: auto;
 
       @include sp {
-        width: 30% !important;
+        // width: 30% !important;
       }
     }
 
     td {
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.5;
-      letter-spacing: 0.05em;
-      // color: $gray-900;
-      text-align: center;
+      letter-spacing: 0.1em;
+      font-size: 1.4rem;
+      color: $black;
       @include sp {
         letter-spacing: 0;
+        min-width: 49px;
       }
     }
   }
 
   &.fix_table {
-    @include sp {
-      table-layout: fixed;
-    }
+    table-layout: fixed;
   }
 
   &.roll_table {
     @include sp {
       width: 768px;
     }
+  }
+
+  &.resTable {
+    @include sp {
+      display: block;
+      border-bottom: 1px solid $gray-800;
+      border: 0;
+
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      th,
+      td {
+        border-bottom: 0;
+      }
+
+      tr {
+        &:last-child {
+          border-bottom: 1px solid $gray-800;
+        }
+      }
+    }
+  }
+}
+
+.table02__note {
+  display: none;
+  @include sp {
+    display: block;
+    font-size: 1.3rem !important;
+    color: #ccc !important;
+    letter-spacing: 0.02em !important;
+    margin-top: 2px;
+    line-height: 1.2 !important;
   }
 }

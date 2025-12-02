@@ -3,30 +3,29 @@
     Faq
 ------------------------------------------------------------*/
 .faq {
-  background: #fff;
-  border-radius: 10px;
+  background: $gray-200;
   transition: all 0.3s;
+  border-bottom: 1px solid $gray-800;
 
-  &:not(:last-child) {
-    margin-bottom: 20px;
+  &:first-child {
+    border-top: 1px solid $gray-800;
   }
 
   &.is-open {
     .faq__heading {
-      &::before {
-        transform: rotate(90deg);
+      &::before,
+      &::after {
+        transform-origin: 50% 0;
       }
     }
   }
 
   //.faq__list .
   &__list {
-    background-color: #3a719e;
+    background-color: $gray-200;
     padding: 70px;
-    border-radius: 20px;
     @include sp {
       padding: 20px;
-      border-radius: 10px;
     }
   }
 
@@ -42,63 +41,50 @@
     &::before,
     &::after {
       content: '';
-      background: $primary;
       position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      border-radius: 99px;
+      bottom: 46%;
+      right: 30px;
+      width: 1px;
+      height: 9px;
+      background-color: $primary;
+      transform-origin: 50% calc(100% - 0px);
     }
 
     &::before {
-      width: 2px;
-      height: 15px;
-      right: 46px;
-      transition: all 0.3s;
-      @include sp {
-        height: 14px;
-        right: 15px;
-      }
+      transform: rotate(45deg);
     }
 
     &::after {
-      width: 15px;
-      height: 2px;
-      right: 39px;
-      @include sp {
-        width: 14px;
-        right: 9px;
-      }
+      transform: rotate(-45deg);
     }
   }
 
   //.faq__ttl .
   .faq__ttl {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     font-weight: 500;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     position: relative;
-    padding-left: 51px;
+    padding-left: 41px;
+    color: $primary;
     @include sp {
       font-size: 1.5rem;
       padding-left: 38px;
     }
 
     &::before {
-      content: 'Q.';
-      font-size: 3rem;
+      content: 'Q';
+      font-size: 1.6rem;
       line-height: 1;
-      color: #3a719e;
-      font-weight: 700;
+      color: $primary;
+      font-weight: 400;
       font-family: $en-fonts;
       position: absolute;
-      top: 50%;
+      top: 4px;
       left: 0;
-      transform: translate(0, -50%);
-      margin-top: -3px;
       @include sp {
-        font-size: 2.4rem;
+        font-size: 1.4rem;
         margin-top: -1px;
       }
     }
@@ -112,29 +98,15 @@
     @include sp {
       padding: 16px 25px 24px 20px;
     }
-
-    &::before {
-      content: '';
-      width: calc(100% - 120px);
-      height: 1px;
-      border-bottom: 1px solid #333;
-      position: absolute;
-      top: 0;
-      left: 80px;
-      @include sp {
-        width: calc(100% - 40px);
-        left: 18px;
-      }
-    }
   }
 
   //.faq__txt .
   .faq__txt {
-    font-size: 1.6rem;
-    line-height: 2;
-    color: #333;
+    font-size: 1.4rem;
+    line-height: calc(28 / 14);
+    color: $black;
     position: relative;
-    padding-left: 51px;
+    padding-left: 41px;
     letter-spacing: 0.1em;
     font-weight: 400;
     @include sp {
@@ -143,19 +115,17 @@
     }
 
     &::before {
-      content: 'A.';
-      font-size: 3rem;
+      content: 'A';
+      font-size: 1.6rem;
       line-height: 1;
       color: $primary;
-      font-weight: 700;
+      font-weight: 400;
       position: absolute;
       font-family: $en-fonts;
-      top: 50%;
+      top: 4px;
       left: 0;
-      transform: translate(0, -50%);
-      margin-top: -3px;
       @include sp {
-        font-size: 2.4rem;
+        font-size: 1.4rem;
       }
     }
   }

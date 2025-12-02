@@ -110,22 +110,9 @@
   }
 
   .block04__ttl {
-    margin: 40px 0 22px;
-    padding-left: 15px;
-    background: none;
+    margin: 30px 0 20px;
     @include tab {
       margin: 20px 0 10px;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      left: 0;
-      top: -8px;
-      background: url(/assets/img/common/square.png) no-repeat center;
-      z-index: -1;
     }
   }
 
@@ -134,9 +121,13 @@
     font-weight: 500;
 
     .note {
-      font-size: 1.4rem;
-      line-height: 1.11;
+      color: $primary;
+      font-size: 1.2rem;
+      line-height: calc(21 / 12);
+      letter-spacing: 0.1em;
+      font-feature-settings: "palt";
       margin-bottom: 6px;
+      font-weight: 500;
     }
 
     .name {
@@ -147,23 +138,25 @@
 
       .pos {
         font-size: 1.4rem;
-        letter-spacing: 0.015em;
+        letter-spacing: 0.1em;
         margin-right: 17px;
+        font-weight: 500;
       }
 
       .jp {
-        font-size: 2.8rem;
-        letter-spacing: 0.015em;
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
         margin-right: 12px;
+        font-weight: 500;
       }
 
       .en {
         font-family: $en-fonts;
         font-weight: 400;
-        font-size: 1.3rem;
+        font-size: 1rem;
         letter-spacing: 0;
-        line-height: 1;
-        text-transform: uppercase;
+        line-height: calc(16 / 10);
+        color: $gray-700;
       }
     }
   }

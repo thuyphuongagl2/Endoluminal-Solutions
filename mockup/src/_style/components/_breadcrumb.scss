@@ -2,14 +2,15 @@
 
 
 .breadcrumb {
+  border-bottom: 1px solid $gray-800;
+  padding: 20px 0;
   ul {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    font-size: 1.4rem;
-    line-height: 1.67;
-    color: #262728;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: calc(23 / 12);
+    color: $primary;
+    letter-spacing: 0.1em;
   }
 
   li:not(:last-child) {
@@ -18,7 +19,7 @@
 
   li {
     a {
-      color: #005726;
+      color: $black;
     }
 
     span {

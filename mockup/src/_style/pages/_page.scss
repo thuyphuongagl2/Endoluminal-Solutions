@@ -22,21 +22,17 @@
     }
   }
 
-  //.mv01__textbox .
-  &__textbox {
+  //.mv01__content .
+  &__content {
     position: absolute;
-    left: 100px;
-    bottom: 40px;
-    @include sp {
-      left: 20px;
-      bottom: 25px;
-      padding-right: 20px;
-    }
+    left: 50px;
+    bottom: 50px;
   }
+
 
   //.mv01__title .
   &__title {
-    font-size: 4.5rem;
+    font-size: 4.4rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     color: $white;
@@ -57,7 +53,7 @@
 ------------------------------------------------------------*/
 .maincontent {
   padding-top: 90px;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
   position: relative;
   z-index: 1;
 
@@ -88,6 +84,24 @@
 }
 
 .under {
+  .header__logoLink {
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .hamburger-line {
+    background: $white;
+
+    &::before, &::after {
+      background-color: $white;
+    }
+  }
+
+  .hamburger-txt {
+    color: $white;
+  }
+
   .section {
     padding-top: 55px;
     @include sp {
