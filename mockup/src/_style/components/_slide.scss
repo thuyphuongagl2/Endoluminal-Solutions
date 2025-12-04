@@ -1,50 +1,96 @@
-@use "../abstracts/" as *;
+@use '../abstracts/' as *;
 
 /*------------------------------------------------------------
     Top Slide
 ------------------------------------------------------------*/
-.slider01 {
-  margin: 0 0 90px;
+.slide01 {
+  width: 100vw;
+  min-width: 1180px;
+  overflow: hidden;
 
-  @include sp {
-    margin: 0 0 60px;
-  }
-
-  .slider01__item {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 400px;
-    height: 400px !important;
-
-    &:nth-child(odd) {
-      margin-top: 69px;
-
-      @include sp {
-        margin-top: 19px;
-      }
-    }
-
-    @include sp {
-      margin-left: 8px;
-      margin-right: 8px;
-      width: 130px;
-      height: 130px !important;
-    }
-  }
-
-  figure {
-    overflow: hidden;
+  //.slide01__item  .
+  &__item {
+    width: 290px;
+    margin: 0 12.5px;
     position: relative;
-    width: 100%;
-    height: 100%;
+    overflow: hidden;
+    @include sp {
+      width: 240px;
+      margin: 0 11px;
+    }
+  }
 
-    img {
-      top: 0;
-      left: 0;
+  //.slide01__img .
+  &__img {
+    position: relative;
+    transition: transform 12s cubic-bezier(0.03, 0.71, 0.12, 0.96),
+      -webkit-transform 12s cubic-bezier(0.03, 0.71, 0.12, 0.96);
+    height: 386px;
+    overflow: hidden;
+    @include sp {
+      height: 301px;
+    }
+
+    &::after {
+      content: '';
       position: absolute;
+      left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background: linear-gradient(to bottom, #fff, #b4b4b4);
+      mix-blend-mode: multiply;
+    }
+  }
+
+  //.slide01__num .
+  &__num {
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    color: $white;
+    font-family: $en-fonts;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: calc(13.55 / 12);
+    writing-mode: vertical-rl;
+    @include sp {
+      font-size: 1rem;
+    }
+  }
+
+  //.slide01__content .
+  &__content {
+    position: absolute;
+    bottom: 13px;
+    left: 20px;
+    color: $white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include sp {
+      bottom: 11px;
+      left: 18px;
+    }
+
+    .ttl {
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+
+      .note {
+        font-size: 1.4rem;
+        line-height: calc(24.5 / 14);
+        margin-right: 11px;
+      }
+
+      .name {
+        font-size: 2.2rem;
+        line-height: calc(38.5 / 22);
+      }
     }
   }
 }
@@ -171,6 +217,99 @@
       button {
         border: 0;
         display: none;
+      }
+    }
+  }
+}
+
+.slide-arr {
+  display: flex;
+  align-items: center;
+  max-width: 527px;
+  flex: 1;
+  margin-top: 32px;
+  @include sp {
+    margin-top: 28px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .slide-arrow {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    background-color: $white;
+    height: 25px;
+    width: 111px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+    gap: 15px;
+    background-color: $gray-200;
+    @include sp {
+      margin-right: 0;
+      width: 135px;
+      height: 32px;
+    }
+  }
+
+  .arrow-next,
+  .arrow-prev {
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid $primary;
+    border-radius: 12.5px;
+    @include sp {
+      border-radius: 20px;
+    }
+
+    img {
+      width: 10px;
+      height: 100%;
+    }
+
+    &.slick-disabled,
+    &:hover {
+      background: $primary;
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  .slide-dots {
+    display: flex !important;
+    align-items: center;
+    height: 1px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex: 1;
+    width: 100%;
+
+    li {
+      width: 25%;
+      height: 100%;
+      background: $gray-800;
+
+      &.on {
+        background: $primary;
+        max-width: 3.8em;
+        border-radius: 5px;
+      }
+
+      button {
+        width: 100%;
+        border: 0;
+        text-indent: -1000px;
+        overflow: hidden;
+        height: 5px;
+        position: relative;
+        bottom: 14px;
       }
     }
   }

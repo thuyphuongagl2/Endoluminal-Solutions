@@ -161,6 +161,7 @@ p {
     line-height: 2;
     margin-bottom: 15px;
   }
+
   img {
     object-fit: contain;
   }
@@ -639,6 +640,7 @@ p {
 .topicflow {
   position: relative;
   transition: all 0.3s ease-in-out;
+
   &::before {
     content: '';
     border-left: 1px dotted $primary;
@@ -664,6 +666,7 @@ p {
       display: block;
       padding: 10px 20px 20px;
     }
+
     &:first-child,
     &:last-child {
       &::before {
@@ -676,11 +679,13 @@ p {
         z-index: 2;
       }
     }
+
     &:first-child {
       &::before {
         top: 0;
       }
     }
+
     &:last-child {
       &::before {
         bottom: 0;
@@ -706,6 +711,7 @@ p {
       margin-bottom: 15px;
       padding: 0;
     }
+
     &::after {
        content: '';
         width: 100px;
@@ -736,6 +742,7 @@ p {
     margin-left: -142px;
     padding: 45px 30px 26px 185px;
     position: relative;
+
     &::after {
       content: '';
       position: absolute;

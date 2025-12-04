@@ -15,17 +15,27 @@
     position: relative;
     z-index: 1;
     margin-right: 4.8vw;
+    @include sp {
+      margin-right: 0;
+    }
   }
 
   .map01{
     max-width: 550px;
     height: 268.5px;
     margin-top: 42px;
+    @include sp {
+      margin-top: 33px;
+      height: 300px;
+    }
   }
 
   //.block01__detail .
   &__detail {
     margin-top: 16px;
+    @include sp {
+      margin-top: 26px;
+    }
 
     dl {
       .content {
@@ -43,7 +53,10 @@
           line-height: calc(24.5 / 14);
           letter-spacing: 0.1em;
           font-weight: 500;
-
+          @include sp {
+            padding-right: 0;
+            width: 100%;
+          }
         }
 
         dd {
@@ -54,10 +67,18 @@
           letter-spacing: 0.1em;
           line-height: calc(28 / 14);
           font-feature-settings: "palt";
+          @include sp {
+            line-height: calc(23.8 / 14);
+            max-width: 102%;
+            margin-right: -10px;
+          }
         }
 
         & + .content {
           margin-top: 26px;
+          @include sp {
+            margin-top: 19px;
+          }
         }
       }
     }

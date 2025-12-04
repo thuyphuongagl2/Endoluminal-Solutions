@@ -11,7 +11,7 @@ body {
   }
 
   @include sp {
-    --header-height: 60px;
+    --header-height: 75px;
   }
 
   // padding-top: var(--header-height);
@@ -49,7 +49,10 @@ body {
       padding: 0 2%;
     }
     @include tab {
-      padding: 0 4%;
+      padding: 0 5%;
+    }
+    @include sp {
+      align-items: center;
     }
   }
 
@@ -67,6 +70,9 @@ body {
     width: 276px;
     @include lg {
       width: 200px;
+    }
+    @include sp {
+      width: 120px;
     }
   }
 
@@ -89,12 +95,13 @@ body {
     @include sp {
       padding: 22px 22px 100px;
       height: calc(100vh - var(--header-height));
+      transform: none;
     }
 
     &.is-active {
       transform: translateY(0);
       opacity: 1;
-          pointer-events: all;
+      pointer-events: all;
 
       @include sp {
         opacity: 1;
@@ -105,6 +112,70 @@ body {
     }
   }
 
+  //.header__right .
+  &__right {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    @include sp {
+      margin-bottom: 3px;
+    }
+  }
+
+  //.header__btn .
+  &__btn {
+    flex-shrink: 0;
+    margin-right: 22px;
+    pointer-events: all;
+    @include sp {
+      margin-right: 0;
+    }
+
+    a {
+      width: 100%;
+      background-color: $white;
+      border-radius: 19px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 16px 6px 32px;
+      transition: all 0.3s ease-in-out;
+      font-family: $en-fonts;
+      color: $primary;
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: calc(13 / 12);
+      z-index: 1;
+      border: 1px solid $primary;
+      @include md {
+        &:hover {
+          opacity: 1;
+          color: $white;
+
+          &::before {
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            border-radius: 19px;
+          }
+        }
+      }
+      @include sp {
+        padding: 4px 16px 5px 27px;
+        min-height: 30px;
+      }
+
+      &::before {
+        @include icon(auto, $primary);
+        left: 14px;
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+      }
+    }
+  }
 }
 
 .menu {
@@ -464,7 +535,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 33px;
   pointer-events: all;
 
   &.active {
@@ -489,10 +559,9 @@ body {
 
     .hamburger-txt {
       &::before {
-        content: "Close";
+        content: 'Close';
       }
     }
-    
   }
 }
 
@@ -534,6 +603,9 @@ body {
   display: block;
   margin-left: 12px;
   line-height: calc(15.04 / 14);
+  @include sp {
+    margin-left: 4px;
+  }
 
   &::before {
     content: 'Menu';

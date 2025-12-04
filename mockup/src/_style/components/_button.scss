@@ -41,6 +41,13 @@
         }
       }
     }
+    @include sp {
+      min-height: 55px;
+      border-radius: 27.5px;
+      text-align: left;
+      justify-content: left;
+      padding: 5px 6px 5px 28px;
+    }
 
     &::before {
       @include icon(auto, $primary);
@@ -95,5 +102,3 @@
     }
   }
 }
-
-

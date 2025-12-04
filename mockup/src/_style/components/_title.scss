@@ -12,6 +12,10 @@
     font-family: $en-fonts;
     display: block;
     margin-bottom: 5px;
+    @include sp {
+      font-size: 4rem;
+      margin-bottom: 2px;
+    }
   }
 
   .jp {
@@ -22,6 +26,7 @@
     line-height: calc(24.5 / 14);
     position: relative;
     padding-left: 40px;
+
 
     &::before {
       position: absolute;
@@ -65,6 +70,9 @@
     font-family: $en-fonts;
     line-height: calc(78.75 / 50);
     display: block;
+    @include sp {
+      font-size: 3.5rem;
+    }
   }
 
   .jp {

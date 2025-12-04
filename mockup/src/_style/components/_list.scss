@@ -12,6 +12,8 @@
   gap: 3px;
   @include sp {
     flex-direction: column;
+    padding-top: 39px;
+    gap: 10px 0;
   }
 
   //.list01__item .
@@ -27,8 +29,8 @@
             -webkit-transform 10s cubic-bezier(0, 0.1, 0.05, 0.99);
         }
 
-        .btn01 {
-          .btn01__txt {
+        .btn02 {
+          .btn02__txt {
             background-color: $white;
             opacity: 1;
             color: $black !important;
@@ -48,12 +50,12 @@
     overflow: hidden;
     transition: transform 10s cubic-bezier(0.03, 0.71, 0.12, 0.96),
       -webkit-transform 10s cubic-bezier(0.03, 0.71, 0.12, 0.96);
-      @include tab {
-        height: 300px;
-      }
-      @include sp {
-        height: 150px;
-      }
+    @include tab {
+      height: 300px;
+    }
+    @include sp {
+      height: 150px;
+    }
 
     &::after {
       @include bg();
@@ -79,6 +81,10 @@
     justify-content: center;
     flex-direction: column;
     padding-bottom: 11px;
+    @include sp {
+      padding-bottom: 0;
+      padding-top: 10px;
+    }
   }
 
   //.list01__note .
@@ -97,7 +103,8 @@
     }
     @include sp {
       writing-mode: horizontal-tb;
-
+      left: 10px;
+      top: 9px;
     }
   }
 

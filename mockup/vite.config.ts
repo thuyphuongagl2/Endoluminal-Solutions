@@ -67,7 +67,7 @@ export default defineConfig(async ({ mode }) => {
       Linter({
         dev: true,
         build: true,
-        errorOverlay: true,
+        errorOverlay: false,
         htmlhint: {
           files: ['src/**/*.{html,ejs}'],
         },
