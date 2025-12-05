@@ -24,8 +24,11 @@
   &__list {
     background-color: $gray-200;
     padding: 70px;
+    @include tab-sm {
+      padding: 50px;
+    }
     @include sp {
-      padding: 20px;
+      padding: 30px 20px;
     }
   }
 
@@ -35,7 +38,7 @@
     position: relative;
     cursor: pointer;
     @include sp {
-      padding: 15px 32px 15px 9px;
+      padding: 15px 32px 15px 0;
     }
 
     &::before,
@@ -48,6 +51,9 @@
       height: 9px;
       background-color: $primary;
       transform-origin: 50% calc(100% - 0px);
+      @include sp {
+        right: 15px;
+      }
     }
 
     &::before {
@@ -70,7 +76,7 @@
     color: $primary;
     @include sp {
       font-size: 1.5rem;
-      padding-left: 38px;
+      padding-left: 30px;
     }
 
     &::before {
@@ -96,7 +102,7 @@
     padding: 23px 40px 32px;
     position: relative;
     @include sp {
-      padding: 16px 25px 24px 20px;
+      padding: 16px 0 24px;
     }
   }
 
@@ -111,7 +117,7 @@
     font-weight: 400;
     @include sp {
       padding-left: 40px;
-      font-size: 1.5rem;
+      padding-left: 31px;
     }
 
     &::before {

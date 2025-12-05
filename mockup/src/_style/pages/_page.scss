@@ -27,12 +27,15 @@
     position: absolute;
     left: 50px;
     bottom: 50px;
+    @include sp {
+      left: 20px;
+      bottom: 30px;
+    }
   }
-
 
   //.mv01__title .
   &__title {
-    font-size: 4.4rem;
+    font-size: clamp(3.2rem, 2.344vw + 1.4rem, 4.4rem);
     font-weight: 500;
     letter-spacing: 0.1em;
     color: $white;
@@ -93,13 +96,46 @@
   .hamburger-line {
     background: $white;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       background-color: $white;
     }
   }
 
   .hamburger-txt {
     color: $white;
+  }
+
+  .header {
+    &.fix,
+    &.is-active {
+      .header__logoLink {
+        img {
+          filter: none;
+        }
+      }
+
+      .hamburger-line {
+        background: $primary;
+
+        &::before,
+        &::after {
+          background-color: $primary;
+        }
+      }
+
+      .hamburger-txt {
+        color: $black;
+      }
+    }
+
+    &.is-active {
+      .nav__hamburger {
+        .hamburger-line {
+          background: transparent;
+        }
+      }
+    }
   }
 
   .section {
@@ -157,5 +193,3 @@
     }
   }
 }
-
-

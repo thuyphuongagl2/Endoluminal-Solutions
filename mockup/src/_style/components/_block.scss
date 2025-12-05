@@ -20,7 +20,7 @@
     }
   }
 
-  .map01{
+  .map01 {
     max-width: 550px;
     height: 268.5px;
     margin-top: 42px;
@@ -66,7 +66,7 @@
           font-weight: 400;
           letter-spacing: 0.1em;
           line-height: calc(28 / 14);
-          font-feature-settings: "palt";
+          font-feature-settings: 'palt';
           @include sp {
             line-height: calc(23.8 / 14);
             max-width: 102%;
@@ -87,6 +87,9 @@
 
 .block04 {
   margin: 30px 0;
+  @include sp {
+    margin: 20px 0;
+  }
 
   //.block04__inner .
   &__inner {
@@ -146,7 +149,7 @@
       font-size: 1.2rem;
       line-height: calc(21 / 12);
       letter-spacing: 0.1em;
-      font-feature-settings: "palt";
+      font-feature-settings: 'palt';
       margin-bottom: 6px;
       font-weight: 500;
     }
@@ -156,6 +159,9 @@
       align-items: center;
       margin-bottom: 0;
       line-height: 1.2;
+      @include sp {
+        flex-wrap: wrap;
+      }
 
       .pos {
         font-size: 1.4rem;
@@ -178,6 +184,9 @@
         letter-spacing: 0;
         line-height: calc(16 / 10);
         color: $gray-700;
+        @include sp {
+          margin-top: 5px;
+        }
       }
     }
   }

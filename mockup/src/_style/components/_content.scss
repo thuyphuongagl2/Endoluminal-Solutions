@@ -10,7 +10,7 @@ h6 {
 h2 {
   padding: 40px 0;
   margin-bottom: 24px;
-  font-size: 4.4rem;
+  font-size: clamp(2.5rem, 2.099vw + 1.713rem, 4.4rem);
   line-height: 1.4;
   margin-top: 60px;
   text-align: center;
@@ -29,20 +29,16 @@ h2 {
     z-index: -1;
     @include sp {
       width: 50px;
-      height: 112px;
+      height: 100px;
     }
   }
   @include tab {
-    font-size: 3.2rem;
     margin-top: 30px;
-    padding-bottom: 15px;
   }
 
   @include sp {
-    font-size: 2.6rem;
     margin: 25px 0;
-    padding-top: 30px;
-    padding-bottom: 12px;
+    padding: 20px 0;
   }
 }
 
@@ -60,7 +56,7 @@ h3 {
   }
 
   @include sp {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     margin: 20px 0;
   }
 }
@@ -82,6 +78,9 @@ h4 {
     height: calc(100% - 10px);
     background-color: $primary;
     border-radius: 3.5px;
+    @include sp {
+      height: calc(100% - 6px);
+    }
   }
 
   @include tab {
@@ -90,7 +89,7 @@ h4 {
   }
 
   @include sp {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     margin: 20px 0 15px;
   }
 }
@@ -109,7 +108,7 @@ h5 {
 
   @include sp {
     margin: 20px 0 15px;
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 
@@ -126,6 +125,7 @@ h6 {
 
   @include sp {
     margin: 20px 0 15px;
+    font-size: 1.7rem;
   }
 
   &::before {
@@ -191,6 +191,9 @@ p {
   .imgbox--full {
     margin: 60px 0 68px;
     position: relative;
+    @include sp {
+      margin: 50px 0 48px;
+    }
 
     &::after {
       content: '';
@@ -333,11 +336,15 @@ p {
     color: $primary;
     padding-left: 12px;
     font-size: 2rem;
+    @include sp {
+      font-size: 1.8rem;
+    }
 
     &::before {
       height: calc(100% - 6px);
       @include sp {
         top: 12px;
+        height: calc(100% - 3px);
       }
     }
   }
@@ -480,9 +487,6 @@ p {
       line-height: 2;
       color: $black;
       padding-bottom: 2px;
-      @include sp {
-        font-size: 1.4rem;
-      }
 
       &::after {
         @include icon(0, $primary);
@@ -538,7 +542,8 @@ p {
       top: 14px;
       height: calc(100% - 13px);
       @include sp {
-        top: 10px;
+        top: 12px;
+        height: calc(100% - 10px);
       }
     }
   }
@@ -583,7 +588,7 @@ p {
   color: $primary;
   position: relative;
   @include sp {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   &::after {
@@ -649,9 +654,7 @@ p {
     left: 155px;
     top: 0;
     z-index: 1;
-    @include tab {
-      left: 110px;
-    }
+
     @include sp {
       content: none;
     }
@@ -664,7 +667,6 @@ p {
     position: relative;
     @include sp {
       display: block;
-      padding: 10px 20px 20px;
     }
 
     &:first-child,
@@ -677,6 +679,9 @@ p {
         position: absolute;
         left: 150px;
         z-index: 2;
+        @include sp {
+          content: none;
+        }
       }
     }
 
@@ -708,19 +713,23 @@ p {
     z-index: 1;
     @include sp {
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: -15px;
       padding: 0;
+      text-align: center;
     }
 
     &::after {
-       content: '';
-        width: 100px;
-        height: calc(100% + 30px);
-        background: $gray-200;
-        position: absolute;
-        right: 0;
-        top: -15px;
-        z-index: -1;
+      content: '';
+      width: 100px;
+      height: calc(100% + 30px);
+      background: $gray-200;
+      position: absolute;
+      right: 0;
+      top: -15px;
+      z-index: -1;
+      @include sp {
+        content: none;
+      }
     }
 
     .txt {
@@ -732,6 +741,9 @@ p {
       margin-bottom: 0;
       font-weight: 400;
       line-height: 1;
+      @include sp {
+        font-size: 2.5rem;
+      }
     }
   }
 
@@ -742,6 +754,10 @@ p {
     margin-left: -142px;
     padding: 45px 30px 26px 185px;
     position: relative;
+    @include sp {
+      margin-left: 0;
+      padding: 30px 20px;
+    }
 
     &::after {
       content: '';
@@ -752,6 +768,9 @@ p {
       background-color: $gray-800;
       width: 1px;
       height: calc(100% - 80px);
+      @include sp {
+        content: none;
+      }
     }
   }
 

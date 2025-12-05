@@ -126,7 +126,7 @@
       letter-spacing: 0;
       text-decoration: none;
       border-radius: 2px;
-      // background-color: $green-800;
+      background-color: $primary;
       position: relative;
 
       &::before,
@@ -171,12 +171,16 @@
     }
 
     .btn01__txt {
-      padding: 5px 15px 5px 30px;
-      min-height: 45px;
+      padding: 5px 15px;
+      min-height: 40px;
 
       &::before,
       &::after {
         content: none;
+      }
+
+      &:hover {
+        background-color: $primary;
       }
     }
   }
@@ -223,7 +227,7 @@
           a {
             text-decoration: underline;
             transition: all 0.3s;
-            // color: $gray-900;
+            color: $black;
 
             &:hover {
               text-decoration: none;
@@ -275,7 +279,7 @@
 
       &:hover {
         a {
-          // color: $green-800;
+          color: $primary;
           background-color: $white;
           opacity: 1;
         }
@@ -292,13 +296,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: #fff;
-        // background-color: $green-800;
+        background-color: $primary;
         text-transform: uppercase;
         line-height: inherit;
         color: inherit;
         text-align: center;
         border-radius: 40px;
-        // border: 1px solid $green-800;
+        border: 1px solid $primary;
         text-decoration: none;
       }
     }

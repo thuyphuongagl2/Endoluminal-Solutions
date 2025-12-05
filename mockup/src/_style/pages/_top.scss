@@ -96,7 +96,8 @@
       z-index: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.35);
+      background-color: #b4b4b4;
+      mix-blend-mode: multiply;
       backdrop-filter: blur(15px);
       opacity: 0;
       will-change: opacity, backdrop-filter;
@@ -323,6 +324,7 @@
 .imgtxt {
   position: relative;
   padding: 145px 0 150px;
+  overflow: hidden;
   @include sp {
     padding: 70px 0;
   }
@@ -836,12 +838,13 @@
 
   .slide-arr {
     &.pc {
+      display: flex !important;
       @include sp {
         display: none;
       }
     }
 
-    .sp {
+    &.sp {
       display: none;
       @include sp {
         display: block;
