@@ -840,14 +840,14 @@
     &.pc {
       display: flex !important;
       @include sp {
-        display: none;
+        display: none !important;
       }
     }
 
     &.sp {
       display: none;
       @include sp {
-        display: block;
+        display: flex;
       }
     }
   }

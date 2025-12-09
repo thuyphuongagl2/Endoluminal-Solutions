@@ -7,6 +7,7 @@
 .footer {
   padding: 101px 0 47px;
   background: url(/assets/img/top/footer_bg.jpg) no-repeat center / cover;
+  overflow: hidden;
   @include sp {
     padding: 39px 0 25px;
   }
