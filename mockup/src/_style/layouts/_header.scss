@@ -33,7 +33,7 @@ body {
   &.fix {
     .header__inner {
       background-color: $white;
-      box-shadow:0 0 10px rgba(#000, 0.1);
+      box-shadow: 0 0 10px rgba(#000, 0.1);
       align-items: center;
     }
 
@@ -64,6 +64,7 @@ body {
     }
     @include sp {
       align-items: center;
+      padding: 0 4%;
     }
   }
 
@@ -73,7 +74,7 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   //.header__logoimg .
@@ -128,7 +129,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 22px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     @include sp {
       margin-bottom: 3px;
     }
@@ -140,7 +141,7 @@ body {
     margin-right: 22px;
     pointer-events: all;
     @include sp {
-      margin-right: 0;
+      margin-right: 5px;
     }
 
     a {
@@ -177,7 +178,7 @@ body {
         }
       }
       @include sp {
-        padding: 4px 16px 5px 27px;
+        padding: 4px 10px 5px 20px;
         min-height: 30px;
       }
 
@@ -185,6 +186,9 @@ body {
         @include icon(auto, $primary);
         left: 14px;
         transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        @include sp {
+          left: 10px;
+        }
       }
     }
   }
@@ -548,6 +552,10 @@ body {
   justify-content: flex-end;
   align-items: center;
   pointer-events: all;
+  @include sp {
+    width: 52px;
+    flex-direction: column;
+  }
 
   &.active {
     .hamburger-line {
@@ -616,7 +624,8 @@ body {
   margin-left: 12px;
   line-height: calc(15.04 / 14);
   @include sp {
-    margin-left: 4px;
+    margin: 10px 0 0;
+    font-size: 1.3rem;
   }
 
   &::before {
