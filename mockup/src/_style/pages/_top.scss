@@ -170,6 +170,63 @@
       object-fit: cover;
     }
   }
+
+  //.mv__scroll .
+  &__scroll {
+    position: absolute;
+    bottom: 4.1%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    @include lg {
+      bottom: 6%;
+    }
+    @include sp {
+      bottom: 19%;
+      left: auto;
+      transform: none;
+      right: 20px;
+    }
+
+    p {
+      position: relative;
+      padding: 0 0 20px;
+      font-family: $en-fonts;
+      font-size: 1.4rem;
+      letter-spacing: 0;
+      font-weight: 400;
+      text-transform: uppercase;
+      @include sp {
+        font-size: 1.2rem;
+        padding-bottom: 17px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 15px;
+        left: 23px;
+        bottom: -5px;
+        background: url(/assets/img/common/icon/icon_arrow03.svg) no-repeat
+          center;
+        transition: all 0.3s ease;
+        animation: 3s ease-in-out infinite animate2;
+        @include tab {
+          width: 20px;
+          height: 10px;
+          bottom: 0;
+          left: 22px;
+        }
+        @include sp {
+          width: 23px;
+          height: 9px;
+          left: 20px;
+          bottom: -1px;
+        }
+      }
+    }
+  }
 }
 /*------------------------------------------------------------
     Newsbox
@@ -179,10 +236,16 @@
   right: 50px;
   bottom: 38px;
   max-width: 376px;
+  width: 40%;
+  @include tab {
+    width: 30%;
+    right: 20px;
+  }
   @include sp {
     right: auto;
     left: 0;
     max-width: 100%;
+    width: 100%;
     padding: 0 20px;
     bottom: 27px;
   }
@@ -859,6 +922,7 @@
   position: relative;
   background-color: $gray-200;
   padding: 19px 0 95px;
+  overflow: hidden;
   @include sp {
     padding: 16px 0 64px;
   }
