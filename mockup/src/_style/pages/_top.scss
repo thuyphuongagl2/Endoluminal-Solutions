@@ -106,26 +106,17 @@
 
   //.mv__slidetxt .
   &__slidetxt {
-    font-size: 21.39rem;
-    font-weight: 400;
-    line-height: 1;
     letter-spacing: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    // left: 50%;
     z-index: 10;
     display: flex;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    font-family: $en-fonts;
-    color: $gray-200;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    // transform: translate(-50%, -50%);
     will-change: clip-path;
-    @include tab-sm {
-      font-size: 18rem;
-    }
-    @include sp {
-      font-size: 12.4rem;
-    }
+
 
     .txt {
       flex-shrink: 0;
@@ -133,6 +124,12 @@
       pointer-events: none;
       animation: scrollText2 30s linear infinite;
       will-change: transform;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
     }
   }
 

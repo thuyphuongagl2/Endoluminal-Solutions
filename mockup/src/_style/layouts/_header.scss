@@ -102,6 +102,8 @@ body {
     min-width: 1280px;
     pointer-events: none;
     height: calc(100vh - var(--header-height));
+    overflow-x: visible;
+    overflow-y: auto;
     @include tab {
       min-width: 100%;
       top: var(--header-height);
@@ -192,6 +194,30 @@ body {
       }
     }
   }
+
+  //.header__nav .
+  &__nav {
+    @include md {
+      position: relative;
+      padding: 90px 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        border: 2px solid $primary;
+        width: 30%;
+        height: 100%;
+        border-radius: 150px;
+        pointer-events: none;
+        @include tab {
+          width: 40%;
+        }
+      }
+    }
+  }
 }
 
 .menu {
@@ -225,15 +251,11 @@ body {
   &__link,
   &__title {
     position: relative;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     display: block;
     color: $black;
-
-    @include tab {
-      font-size: 1.3rem;
-    }
     @include sp {
       font-size: 1.5rem;
       padding-left: 10px;
