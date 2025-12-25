@@ -780,15 +780,15 @@
 
     .btn01 {
       @include sp {
-        width: 132px !important;
+        // width: 132px !important;
       }
 
       &:nth-child(2) {
-        width: 132px;
+        // width: 132px;
       }
 
       &:last-child {
-        width: 115px;
+        // width: 115px;
       }
     }
   }

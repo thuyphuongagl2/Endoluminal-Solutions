@@ -19,6 +19,27 @@ body {
   line-height: 1.5;
   position: relative;
   color: $black;
+
+  &.en {
+    p {
+    letter-spacing: 0 !important;
+    }
+
+
+    .header__nav {
+      &::after {
+        width: 77%;
+      }
+    }
+
+    .list01__ttl {
+      font-size: 2rem;
+    }
+
+    .message__boxname .name .jp {
+      font-size: 2rem;
+    }
+  }
 }
 
 main {
