@@ -175,6 +175,10 @@
         letter-spacing: 0.1em;
         margin-right: 12px;
         font-weight: 500;
+        white-space: nowrap;
+        @include tab {
+          font-size: 2.2rem;
+        }
       }
 
       .en {
@@ -184,10 +188,49 @@
         letter-spacing: 0;
         line-height: calc(16 / 10);
         color: $gray-700;
+        white-space: nowrap;
         @include sp {
           margin-top: 5px;
         }
       }
     }
+  }
+  //.block04--style01 .
+  &--style01 {
+    display: block;
+    width: 48%;
+
+    @include sp {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .block04__inner {
+      display: block;
+    }
+
+    .block04__img {
+      width: 215px;
+      height: 315px;
+      margin: 0 auto;
+      @include tab {
+        width: 180px;
+        height: 280px;
+      }
+    }
+
+    .block04__content {
+      padding: 25px 0 0;
+    }
+  }
+}
+
+.blocklist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px 20px;
+  @include sp {
+    display: block;
   }
 }
