@@ -20,6 +20,8 @@ $(document).ready(function () {
       }
     }
   });
+  // Throttled scroll handler — combines header fix + scroll-to-top in one RAF
+  var scrollTicking = false;
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 0) {
       $('.header').addClass('fix');
@@ -131,53 +133,59 @@ $(document).ready(function () {
   mv scroll
   ====================================== */
   gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(CSSRulePlugin);
-  var rule = CSSRulePlugin.getRule(".mv__imgwwrap::after");
-  window.addEventListener("load", () => {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".mv__space",
-        start: "top bottom",
-        end: "bottom bottom",
-        invalidateOnRefresh: true,
-        scrub: 1
-      }
-    })
-      .to(rule, {
-        duration: 2,
-        width: "100%",
-        height: "100%",
-        cssRule: {
-          content: "none"
+
+  if (document.querySelector('.mv__space')) {
+    window.addEventListener("load", function () {
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".mv__space",
+          start: "top bottom",
+          end: "bottom bottom",
+          invalidateOnRefresh: true,
+          scrub: 0.5,
+          fastScrollEnd: true
         }
-      }, "vis1")
-      .to(".mv__img", {
-        duration: 2,
-        width: "100%",
-        height: "100%",
-        borderRadius: "0",
-        top: "50%",
-      }, "vis1")
-      .to(".mv__img-item", {
-        duration: 2,
-        scale: 1
-      }, "vis1")
-      .to(".mv__img-cover", {
-        duration: 1,
-        autoAlpha: 1
-      }, "vis2")
-      .to(".mv__slidetxt", {
-        duration: 1,
-        clipPath: "polygon(0 -50%, 100% -50%, 100% 0%, 0 0%)",
-        y: "50%"
-      }, "vis2")
-      .to(".newsbox", {
-        duration: 1,
-        bottom: "auto",
-        // top: 0,
-        // position: relative,
-      }, "vis2");
-  })
+      });
+
+      // Animate border pseudo-element via CSS custom property
+      var imgwrap = document.querySelector('.mv__imgwwrap');
+      if (imgwrap) {
+        tl.to(imgwrap, {
+          duration: 2,
+          '--mv-border-opacity': 0,
+          ease: 'none'
+        }, "vis1");
+      }
+
+      tl.to(".mv__img", {
+          duration: 2,
+          width: "100%",
+          height: "100%",
+          borderRadius: "0",
+        }, "vis1")
+        .to(".mv__img-item", {
+          duration: 2,
+          scale: 1,
+        }, "vis1")
+        .to(".mv__img-cover", {
+          duration: 1,
+          autoAlpha: 1,
+        }, "vis2")
+        .to(".mv__slidetxt", {
+          duration: 1,
+          clipPath: "polygon(0 -50%, 100% -50%, 100% 0%, 0 0%)",
+          yPercent: 50,
+        }, "vis2")
+        .to(".newsbox", {
+          duration: 1,
+          bottom: "auto",
+        }, "vis2")
+        .to(".mv__scroll", {
+          duration: 1,
+          bottom: "auto",
+        }, "vis2");
+    });
+  }
 });
 
 

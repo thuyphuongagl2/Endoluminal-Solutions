@@ -29,6 +29,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    --mv-border-opacity: 1;
 
     &::after {
       content: '';
@@ -40,13 +41,15 @@
       border: 1px solid $primary;
       border-radius: 190px;
       transform: translate(-50%, -50%);
+      opacity: var(--mv-border-opacity);
+      transition: opacity 0.1s linear;
       @include tab-sm {
         width: 41%;
       }
       @include sp {
         width: 66.6%;
         height: 64.5%;
-        top: 48.2%;
+        top: 50.1%;
       }
     }
   }
@@ -64,6 +67,7 @@
     border-radius: 180px;
     overflow: hidden;
     transform: translate(-50%, -50%);
+    will-change: width, height, border-radius;
     @include tab-sm {
       width: 38%;
     }
@@ -115,7 +119,6 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     transform: translateY(-50%);
     // transform: translate(-50%, -50%);
-    will-change: clip-path;
 
 
     .txt {
